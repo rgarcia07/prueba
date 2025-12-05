@@ -7,5 +7,9 @@ Route::get('/', function () {
 });
 
 Route::get('/private', function () {
-    return response('Welcome! You are logged in.');
+    return view('private');
+})->middleware('auth');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
 })->middleware('auth');
